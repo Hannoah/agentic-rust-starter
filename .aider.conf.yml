@@ -1,12 +1,15 @@
-# 항상 읽기 전용 컨텍스트로 주입할 파일 목록
+# NOTE: keep this file ASCII-only. On Windows, aider reads it as cp949 and
+# non-ASCII comments make config parsing fail.
+
+# Files injected as read-only context in every session
 read:
   - CONVENTIONS.md
   - Cargo.toml
   - docs/ai_context/crate_cheatsheet.md
 
-# 코드 수정 직후 자동으로 컴파일러/Clippy 피드백 루프 실행
+# Run the compiler/clippy feedback loop right after each edit
 auto-lint: true
-lint-cmd: "./ai-verify.sh"
+lint-cmd: "bash ai-verify.sh"  # works on Windows (cmd.exe cannot run ./x.sh), Linux and macOS
 
-# 테스트 명령어 연동 (/test 실행 시)
+# Test command (used by /test)
 test-cmd: "cargo test --quiet"

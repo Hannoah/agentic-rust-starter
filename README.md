@@ -100,6 +100,7 @@ needless_pass_by_value = "warn"
 ## 커스터마이즈
 
 - **스캐폴딩 단계에서 `todo!()`를 쓰고 싶다면:** `ai-verify.sh`의 `-D clippy::todo` 줄을 주석 처리하세요. 규칙의 1단계(`todo!()`로 뼈대 작성)와 충돌합니다.
+- **Windows:** aider는 `lint-cmd`를 cmd.exe로 실행하므로 `./ai-verify.sh`는 동작하지 않습니다. 그래서 `bash ai-verify.sh`로 지정했습니다. Git Bash 등 `bash`가 PATH에 있어야 합니다. 또 aider가 설정 파일을 cp949로 읽기 때문에 **`.aider.conf.yml`에는 한글 주석을 쓰지 마세요**(파싱 실패).
 - **Edition:** `Cargo.toml`의 `edition = "2024"`는 Rust 1.85 이상이 필요합니다. 구버전이면 `"2021"`.
 - **규칙 추가:** `CONVENTIONS.md`는 AI가 매 세션 읽는 파일입니다. 프로젝트 고유 규칙(사용 중인 DB 크레이트 등)을 여기에 추가하고, 자주 틀리는 API는 치트시트에 예제로 넣는 것이 효과적입니다.
 - **다른 AI 도구:** 규칙의 본문은 도구에 종속적이지 않습니다. Claude Code는 `CLAUDE.md`, Cursor는 `.cursor/rules/*.mdc`, Copilot은 `.github/copilot-instructions.md`에 `CONVENTIONS.md` 내용을 옮겨 쓰면 됩니다. `ai-verify.sh`는 어떤 도구에서도 수동 검증 스크립트로 쓸 수 있습니다.
