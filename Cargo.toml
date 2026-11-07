@@ -1,0 +1,23 @@
+[package]
+name = "ai-rust-template"
+version = "0.1.0"
+edition = "2024" # 또는 "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+anyhow = "1"
+thiserror = "2"
+tracing = "0.1"
+
+[lints.rust]
+unsafe_code = "forbid"
+unused_must_use = "deny"
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+dbg_macro = "deny"
+await_holding_lock = "deny"
+large_futures = "warn"
+needless_pass_by_value = "warn"
