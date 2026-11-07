@@ -37,17 +37,16 @@ AI에게 Rust를 시키면 같은 실수가 반복됩니다.
 
 ## 빠른 시작
 
+**방법 1 — 한 줄 설치.** 내 Rust 프로젝트 루트에서 실행합니다. 이미 있는 파일은 덮어쓰지 않습니다.
+
 ```bash
-git clone https://github.com/Hannoah/agentic-rust-starter.git
-cd agentic-rust-starter
-
-# 내 Rust 프로젝트 루트로 복사 (Cargo.toml은 아래 '기존 프로젝트에 적용' 참고)
-cp -r .aider.conf.yml ai-verify.sh clippy.toml CONVENTIONS.md docs /path/to/your-project/
-chmod +x /path/to/your-project/ai-verify.sh
-
-cd /path/to/your-project
+curl -fsSL https://raw.githubusercontent.com/Hannoah/agentic-rust-starter/main/install.sh | bash
 aider
 ```
+
+**방법 2 — 템플릿으로 새 프로젝트 만들기.** 이 페이지 위쪽의 **Use this template** 버튼을 누르세요.
+
+**방법 3 — ZIP.** **Code → Download ZIP**으로 받아 파일을 프로젝트 루트에 복사하고 `chmod +x ai-verify.sh`를 실행하세요.
 
 처음 작업은 **타입부터** 시킵니다.
 
@@ -82,6 +81,7 @@ needless_pass_by_value = "warn"
 | [`CONVENTIONS.md`](CONVENTIONS.md) | 작업 순서(Type-First), 소유권, 에러 처리, 안전·동시성, 최신 crate 관용구 |
 | [`.aider.conf.yml`](.aider.conf.yml) | 규칙 파일 자동 주입, 수정마다 `ai-verify.sh` 실행, `/test` 연동 |
 | [`ai-verify.sh`](ai-verify.sh) | `cargo check` + `clippy`를 압축 출력으로 실행. 프로젝트 전체를 검사 |
+| [`install.sh`](install.sh) | 한 줄 설치 스크립트. 기존 파일은 덮어쓰지 않음 |
 | [`Cargo.toml`](Cargo.toml) | 편법 차단 린트와 기본 의존성(tokio, serde, anyhow, thiserror, tracing) |
 | [`clippy.toml`](clippy.toml) | 테스트 코드에서만 `unwrap`/`expect` 허용 |
 | [`docs/ai_context/crate_cheatsheet.md`](docs/ai_context/crate_cheatsheet.md) | thiserror, Axum 0.8, Clap 4 최신 패턴 |
