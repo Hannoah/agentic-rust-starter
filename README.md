@@ -5,6 +5,19 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Rust](https://img.shields.io/badge/rust-1.85%2B-orange.svg)
 
+## 설치
+
+| 환경 | 명령 |
+|---|---|
+| **bash** (Linux, macOS, Git Bash) | `curl -fsSL https://raw.githubusercontent.com/Hannoah/agentic-rust-starter/main/install.sh \| bash` |
+| **PowerShell** | `irm https://raw.githubusercontent.com/Hannoah/agentic-rust-starter/main/install.ps1 \| iex` |
+| **새 프로젝트** | 이 페이지 위쪽의 **Use this template** 버튼 |
+| **수동** | **Code → Download ZIP** 후 파일을 프로젝트 루트에 복사, `chmod +x ai-verify.sh` |
+
+- 내 Rust 프로젝트 **루트에서 실행**하세요. 이미 있는 파일은 덮어쓰지 않고 건너뜁니다.
+- 기존 `Cargo.toml`은 건드리지 않으므로 [`[lints]` 블록만 병합](#기존-프로젝트에-적용)하세요.
+- 필요한 것: [Aider](https://aider.chat), Rust 1.85+, `bash` (Windows는 Git for Windows).
+
 ## 왜 필요한가
 
 AI에게 Rust를 시키면 같은 실수가 반복됩니다.
@@ -35,25 +48,9 @@ AI에게 Rust를 시키면 같은 실수가 반복됩니다.
  /test → cargo test --quiet
 ```
 
-## 빠른 시작
+## 사용법
 
-**방법 1 — 한 줄 설치.** 내 Rust 프로젝트 루트에서 실행합니다. 이미 있는 파일은 덮어쓰지 않습니다.
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/Hannoah/agentic-rust-starter/main/install.sh | bash
-aider
-```
-
-PowerShell에서는:
-
-```powershell
-irm https://raw.githubusercontent.com/Hannoah/agentic-rust-starter/main/install.ps1 | iex
-aider
-```
-
-**방법 2 — 템플릿으로 새 프로젝트 만들기.** 이 페이지 위쪽의 **Use this template** 버튼을 누르세요.
-
-**방법 3 — ZIP.** **Code → Download ZIP**으로 받아 파일을 프로젝트 루트에 복사하고 `chmod +x ai-verify.sh`를 실행하세요.
+설치 후 프로젝트 루트에서 `aider`를 실행하면 설정이 자동으로 적용됩니다.
 
 처음 작업은 **타입부터** 시킵니다.
 
